@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<base href="https://www.runoob.com" target="_blank">
+<style>
+    span
+    {
+        /*background-color:darkkhaki;*/
+        text-align: justify;
+    }
+    input,select
+    {
+        margin-left: 10px;
+    }
+    table
+    {
+        border-collapse: collapse;
+    }
+    table,td
+    {
+        border: 1px solid black;
+    }
+</style>
+<title>菜鸟教程(runoob.com)</title> 
+</head>
+<body>
+    <div style="text-align: left; background-color: bisque; width: 400px;">
+    <form name="input" action="html_form_action.php" method="GET">
+        <table>
+            <tr>
+                <td><span>First name: </span></td>
+                <td><input type="text" name="firstname"></td>
+            </tr>
+            <tr>
+                <td><span>Last name: </span></td>
+                <td><input type="text" name="lastname"></td>
+            </tr>
+            <tr>
+                <td><span>Password: </span></td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+            <tr>
+                <td><span>Gender: </span></td>
+                <td><input type="radio" name="sex" value="male">Male <input type="radio" name="sex" value="female">Female</td>
+            </tr>
+            <tr>
+                <td><span>Ability: </span></td>
+                <td><input type="checkbox" name="ability" value="C/C++">C/C++ 
+                <input type="checkbox" name="ability" value="python">python
+                <input type="checkbox" name="abilily" value="java">Java</td>
+            </tr>
+            <tr>
+                <td><span>Education:</span></td>
+                <td><select name="education">
+                <option value="bachelor">Bachelor</option>
+                <option value="master">Master</option>
+                <option value="doctor">Doctor</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</body>
+</html>
