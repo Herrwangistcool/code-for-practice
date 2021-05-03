@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>最大公约数</title>
+        <base target='_blank'>
+        <script>
+            /*
+            输入两个数，求两个数的最大公约数（能够同时整除两个数的最大数）
+            */
+           /*
+           最大公约数，最小是1，最大只能是两个数中的较小数
+           先找出两个数中最小的那个数
+           */
+           var num1=18;
+           var num2=6;
+           //找出较小数
+           var min=num1>num2 ? num2 : num1;
+           while(1){
+               if(num1%min==0 && num2%min==0){
+                   break;
+               }
+               min--;
+           }
+           document.write("最大公约数是"+min);
+           /*输入两个数，求两个数的最小公倍数（能够同时被两个数整除的最小数）*/
+           /*
+           先找出两个数中最大的那个数
+           最小公倍数，最大是两个数的积，最小是两个数中的较大数
+           */
+            var num1=6;
+            var num2=12;
+            var max=num1>num2 ? num1 : num2;
+            while (1){
+                if(max%num1==0 && max%num2==0){
+                    break;
+                }
+                max++;
+            }
+            document.write("最小公倍数是"+max);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

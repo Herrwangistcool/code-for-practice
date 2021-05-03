@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>水仙花数</title>
+        <base target='_blank'>
+        <script>
+            /*
+            找出所有水仙花数，三位数，各位立方和等于该数本身。
+            */
+            for(var i=100; i<1000; i++){
+                //取出每一位
+                var a=i%10; //个位
+                var b=parseInt(i/10)%10;   //十位
+                var c=parseInt(i/100);  //百位
+
+                //求立方和
+                var sum=Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3);
+                if(i==sum){
+                    document.write(i+"<br/>");
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

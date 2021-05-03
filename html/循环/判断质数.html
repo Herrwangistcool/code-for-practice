@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>判断质数</title>
+        <base target='_blank'>
+        <script>
+            var num=6;
+            var isPrime=false;
+            for(var i=2; i<num; i++){
+                if(num%i==0){
+                    isPrime=true;
+                    break;
+                }
+            }
+            if(isPrime){
+                document.write(num+"是合数");
+            }else{
+                document.write(num+"是质数");
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
