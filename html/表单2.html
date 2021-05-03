@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>表单2</title>
+</head>
+<body>
+    <div style="width: 500px; margin: auto;">
+        <form action="https://www.baidu.com" method="GET"><!--可选post或get方法提交数据-->
+            <table border="1px" cellspacing="0">
+                <thead align="center">表单提交</thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="6" align="center">基本信息</td>
+                        <td>Username</td>
+                        <td colspan="3">
+                            <input type="text" name="loginname">
+                        </td>
+                        <!-- <td></td>
+                        <td></td> -->
+                    </tr>
+                    <tr>
+                       
+                        <td>Password</td>
+                        <td colspan="3">
+                            <input type="password" name="pwd">
+                        </td>
+                        <!-- <td></td>
+                        <td></td> -->
+                    </tr>
+                    <tr>
+                        
+                        <td>E-mail Adress</td>
+                        <td colspan="3">
+                            <input type="text" name="Email">
+                        </td>
+                        <!-- <td></td>
+                        <td></td> -->
+                    </tr>
+                    <tr>
+                        
+                        <td>Gender</td>
+                        <td>
+                            <input type="radio" name="Female">Female
+                        </td>
+                        <td>
+                            <input type="radio" name="Male">Male
+                        </td>
+                        <!-- <td></td> -->
+                    </tr>
+                    <tr>
+                        
+                        <td>Ability</td>
+                        <td>
+                            <input type="checkbox" name="C/C++">C/C++
+                        </td>
+                        <td>
+                            <input type="checkbox" name="Java">Java
+                        </td>
+                        <td>
+                            <input type="checkbox" name="Python">Python
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Education</td>
+                        <td colspan="3" align="center">
+                            <select name="education">
+                                <option value="bachelor">Bachelor</option>
+                                <option value="master">Master</option>
+                                <option value="doctor">Doctor</option>
+                            </select>
+                        </td>
+                        <!-- <td></td>
+                        <td></td> -->
+                    </tr>
+                    <tr align="center">
+                        <td colspan="6">
+                            <input type="submit" value="提交">
+                            <input type="reset" value="重置">
+                        </td>
+                        <!-- <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td> -->
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </form>
+    </div>
+</body>
