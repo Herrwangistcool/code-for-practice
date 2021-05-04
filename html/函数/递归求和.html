@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*计算1~n的和*/
+            //1.用循环实现
+            function sum(n){
+                var res=0;
+                for(var i=1; i<=n; i++){
+                    res+=i;
+                }
+                return res;
+            }
+            //2.用递归实现
+            function add(n){
+                if(n==1){
+                    return 1;
+                }else{
+                    var res=n+add(n-1);
+                    return res;
+                }
+            }
+            document.write(add(6));
+            /*
+                设有一对新生兔子，从第四个月开始每个月月初都生一对兔子，新生的兔子从第四个月月初开始又每个月生一对兔子
+                按此规律，并假定兔子没有死亡，n（<=20）个月月末共有多少对兔子
+            */
+           function rabbit(n){
+              if(n<4){
+                  return 1;
+              } 
+              return rabbit(n-1)+rabbit(n-3);
+           }
+           document.write(rabbit(8));
+           /*
+                有一堆桃子不知数目，猴子第一天吃掉一半，觉得不过瘾，又多吃了一只，第二天照此办法，吃掉剩下桃子的一半另加一只。
+                天天如此，到第num（num<=10）天早上，猴子发现只剩一只桃子了，问这堆桃子原来有多少只。
+           */
+
+           function peachAmount(num){
+               if(num==1){
+                   return 1;
+               }
+               return (peachAmount(num-1)+1)*2;
+           }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
