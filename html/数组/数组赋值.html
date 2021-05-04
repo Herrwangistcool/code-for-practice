@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                通过循环给数组每个元素赋值，随机数
+                Math.random()  在[0,1)中取随机数
+            */
+            //创建长度是10的数组
+            var arr=new Array(10);
+            for(var i=0; i<arr.length; i++){
+                arr[i]=parseInt(Math.random()*10);
+            }
+            for(var i in arr){  //for...in快速遍历，不用每次判断arr.length.
+                document.write(arr[i]+"<br />");
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

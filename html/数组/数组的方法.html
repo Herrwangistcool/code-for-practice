@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            var arr=["北京", "上海", "广州"];
+            arr.push("深圳", "天津", "成都");
+            //document.write(arr);
+            var res=arr.pop();
+            document.write(res);
+            document.write("<br />");
+            document.write(arr);
+            var head=arr.shift();
+            document.write("<br/>"+head);
+            var dynasty=['唐朝','宋朝','元朝'];
+            var addDynasty=dynasty.unshift('商汤','隋朝');
+            document.write("<br/>"+dynasty);
+            document.write('<br/>'+addDynasty);
+
+            var arr1=[10,20,30];
+            var arr2=[40,50,60];
+            var newArr=arr1.concat(arr2, 'hello', true);
+            document.write("<br/>"+newArr);
+            document.write("<br/>"+arr1);
+            document.write("<br/>"+newArr.length);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
