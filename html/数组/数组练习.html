@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                随机给出一个五位数，然后输出该数共有多少位，每位分别是什么
+            */
+
+            function countOfNum(num){
+                var arr=[];
+                while(num){
+                    arr.unshift(num%10);
+                    num=parseInt(num/10);
+                }
+                document.write("一共是"+arr.length+"位"+"<br/>");
+                document.write("每一位分别是："+arr);
+            }
+            countOfNum(12345);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
