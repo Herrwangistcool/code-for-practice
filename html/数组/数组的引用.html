@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            //数组变量存储的是数组的地址
+            var arr1=[10, 20, 30, 40];
+            var arr2=arr1;
+            //arr1和arr2指向同一个地址，arr2修改，arr1也修改
+            arr2.push(50, 60);
+            //concat可以拷贝原数组生成一个新数组，arr3修改，arr1不变
+            var arr3=arr1.concat();
+            arr3.pop();
+            document.write(arr1+"<br/>");
+            document.write(arr2+"<br/>");
+            document.write(arr3);
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

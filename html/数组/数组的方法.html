@@ -13,15 +13,17 @@
             document.write(res);
             document.write("<br />");
             document.write(arr);
-            var head=arr.shift();
+            var head=arr.shift();   //从数组头部取下一个元素
             document.write("<br/>"+head);
             var dynasty=['唐朝','宋朝','元朝'];
+            //从数组头部插入元素
             var addDynasty=dynasty.unshift('商汤','隋朝');
             document.write("<br/>"+dynasty);
             document.write('<br/>'+addDynasty);
 
             var arr1=[10,20,30];
             var arr2=[40,50,60];
+            //拷贝原数组，生成新数组
             var newArr=arr1.concat(arr2, 'hello', true);
             document.write("<br/>"+newArr);
             document.write("<br/>"+arr1);

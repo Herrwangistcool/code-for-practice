@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                定义一个含有30个整型元素的数组，按顺序分别赋予从2开始的偶数；
+                然后按顺序每五个数求出一个平均值，放在另一个数组中并输出。
+            */
+
+            var arr=new Array(30);
+            var arrAverage=new Array();
+            var j=2;    //用于给arr赋值
+            /* var k=0;    //用于arrAverage作目录 */
+            for (var i=0; i<30; i++){
+                arr[i]=j;
+                j +=2;
+                /* document.write(arr[i]); */
+                //求平均值
+                if((i+1)%5==0){
+                    var sum=arr[i]+arr[i-1]+arr[i-2]+arr[i-3]+arr[i-4]
+                    /* arrAverage[k]=sum/5; */
+                    arrAverage.push(sum/5); //用push方法插入平均值到数组中
+                    /* k++; */
+                }
+            }
+            document.write(arr+"<br/>");
+            document.write(arrAverage+"<br/>");
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

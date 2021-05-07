@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            //基于当前数组获取指定区域元素
+            var arr=[10,20,30,40,50,60];
+            var newArr=arr.slice(1,4);
+            document.write(newArr+"<br/>");
+            document.write(arr+"<br/>");
+
+            var res=arr.splice(2,0,"Hello", "world");
+            //document.write(arr+"<br/>");
+            document.write(arr);
+
+            //字符串拼接
+            /* var str=arr.join('-');
+            document.write("<br/>"+str); */
+
+
+
+            //数组排序
+            //sort默认按ASCII码值排序
+            arr.splice(2,2);
+            document.write("<br/>"+arr);
+            arr.splice(2,0,9);
+            arr.sort();
+            document.write("<br/>"+arr);
+
+            //按数值大小排序，固定写法
+            arr.sort(function(value1, value2){
+                return value1-value2;   //从小到大排序
+            });
+
+            //数组逆序
+            arr.reverse();
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
