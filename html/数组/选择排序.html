@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                选择排序(打擂台法)
+                    规则：选出一个位置，这个位置上的数，和后面所有的数进行比较，如果比较出大小就交换两个数位置
+            */
+
+            var arr=[9,8,7,6,5,4];
+            function changeSort(arr){
+                    for(var i=0; i<arr.length-1; i++){
+                    for(var j=i+1; j<arr.length; j++){
+                        if(arr[i]>arr[j]){
+                            var temp=arr[i];
+                            arr[i]=arr[j];
+                            arr[j]=temp;
+                        }
+                    }
+                }
+            }
+            changeSort(arr);
+            document.write(arr);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
