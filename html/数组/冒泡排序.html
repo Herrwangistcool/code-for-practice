@@ -8,14 +8,17 @@
         <script>
             function bubbleSort(arr){
                 //每一轮比较的次数
-                for(var j=0; j<arr.length-(i+1); j++){
-                    if(arr[j]>arr[j+1]){
-                        //交换两个数的位置
-                        var temp=arr[j];
-                        arr[j]=arr[j+1];
-                        arr[j+1]=temp;
+                for(var i=0; i<arr.length-1; i++){
+                        for(var j=0; j<arr.length-(i+1); j++){
+                        if(arr[j]>arr[j+1]){
+                            //交换两个数的位置
+                            var temp=arr[j];
+                            arr[j]=arr[j+1];
+                            arr[j+1]=temp;
+                        }
                     }
                 }
+                
             }
         </script>
     </head>

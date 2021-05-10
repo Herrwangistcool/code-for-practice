@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                字符串声明：
+                    1.通过new运算符声明字符串
+                    2.省略new声明字符串
+                    3.字符串常量赋值
+            */
+
+            var str1=new String(100);   //object类型 引用数据类型
+            document.write(typeof str1+"&nbsp;");
+            document.write(str1+20);
+            var str2=String(100);       //string类型
+            document.write("<br/>"+typeof str2+"&nbsp;");
+            document.write(str2+10);
+            var str3="Hello";           //string类型
+            document.write("<br/>"+typeof str3+"&nbsp;");
+            document.write(str3);
+
+            /*
+                访问字符串中的字符：
+                    1.字符串.length 访问字符串中的个数
+                    【注】中文 utf-8(三个字符表示一个字符串)    gbk(两个字符表示一个汉字)   在计数的时候当作一个汉字计数
+                
+                访问字符串中单个字符：
+                    字符串.charAt(下标)
+                    【注】  从0开始的
+                    字符串[下标]
+
+                字符串是只读，字符串一旦被声明没有办法被修改，如果非要修改，只能先销毁原字符串，重新生成新的字符串
+            */
+
+            var str="hello北京";
+            document.write("<br/>"+str.length);
+            document.write("<br/>"+str.charAt(4)+"&nbsp;"+str[4]);
+
+            /*
+                字符串中的字符进行遍历也通过循环来进行
+            */
+
+            for(var i=0; i<str.length; i++){
+                document.write("<br/>"+str[i]+"<br/>");
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
