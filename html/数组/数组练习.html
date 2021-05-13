@@ -20,6 +20,23 @@
                 document.write("每一位分别是："+arr);
             }
             countOfNum(12345);
+
+            /*
+                编写函数has(arr, 60)判断数组中是否存在60这个元素，返回布尔值
+            */
+
+            function has(arr, item){
+                for(var i=0; i<arr.length; i++){
+                    if(arr[i]===item){
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            document.write("<br/>");
+            document.write(has([1,2,3],2)+"<br/>");
+            document.write(has([1,2,3],4));
         </script>
     </head>
     <body>

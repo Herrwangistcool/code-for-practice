@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                生成13位条形码
+                    EAN-13码规则：第十三位数字是前十二位数字经过计算得到的校验码。
+                例如：690123456789
+                前十二位的奇数位和：6+0+2+4+6+8=26
+                前十二位的偶数位和：9+1+3+5+7+9=34
+                将奇数位和与偶数位和的三倍相加：26+34*3=128
+                取结果的个位数：128的个位数为8
+                用10减去这个个位数：10-8=2
+                所以校验码为2
+                注：如果取结果的个位数为0，那么校验码不是(10-0=10)，而是0
+                例如：输入690123456789 输出6901234567892
+            */
+
+            function ean13(num){
+                //将其中每一位数取下来
+                var arr=[];
+                while (num){
+                    arr.unshift(num%10);
+                    num=parseInt(num/10);
+                }
+                //由于数组的下标是从0开始的，所以下标的奇数位对应条形码的偶数位
+                var odd=0;  //记录奇数位
+                var even=0; //记录偶数位
+                for(var i=0; i<arr.length; i++){
+                    //下标是偶数，对应的是奇数位
+                    if(i%2==0){
+                        odd+=arr[i];
+                    }else{
+                        even+=arr[i];
+                    }
+                }
+                //求和并取个位数
+                var sum=(odd+even*3)%10;
+                //sum为0时，第十三位就是0，不需要被10减
+                if(sum){
+                    sum=10-sum;
+                }
+                arr.push(sum);
+                return Number(arr.join(""));
+            }
+            document.write(ean13(690123456789));
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
