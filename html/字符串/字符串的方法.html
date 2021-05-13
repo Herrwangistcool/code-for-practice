@@ -7,19 +7,54 @@
         <title>Document</title>
         <script>
             /*
-                charCoadeAt()
-                    格式：字符串.carCodeAt(下标)
-                    功能：访问字符串中对应下标的ASCII码值
-
-                String.fromCharCode();
-                    格式：String.fromCharCode(码值1, 码值2...);
-                    功能：将传入的ASCII码值转换成对应的字符
-                    返回值：组成的字符串
+                replace()
+                    格式：supStr.replace(oldStr, newStr);
+                    功能：用newStr将oldStr替换，生成新字符串
+                    参数：
+                        第一个参数传入的是字符串只能替换一次
+                        第一个参数 正则表达式
+                    返回值：替换成的新字符串
             */
 
-            var str="hello";
-            document.write(str.charCodeAt(1)+"<br/>");
+            var str="how are Are are you";
+            var newStr=str.replace("are", "are you");
+            document.write(newStr+"<br/>");
+            document.write(str+"<br/>");
+            //把所有的are替换成old are
+            var reStr=str.replace(/are/ig, "old are");
+            document.write(reStr+"<br/>");
             
+            /*
+                split() 字符串分割
+                    格式：字符串.split(分隔符, length)
+                    参数：
+                        第一个参数，用这个分隔符对原字符串进行分割
+                        第二个参数，控制返回的数组的元素格式，一般情况下不用
+                    功能：用分隔符对原字符串，进行字符串分割，将分割完毕以后的子串，放在数组中返回
+                    返回值：数组
+
+                注意：
+                    1.相邻的两个分隔符，会产生空字符串
+                    2.分隔符是空字符串"", 直接将每一个字符，单独分割成子串，放在数组中返回
+            */
+
+            var splitStr=str.split(" ");
+            document.write(splitStr+"<br/>");
+
+            /*
+                toLowerCase()  转成全小写
+                toUpperCase()  转成全大写
+            */
+
+            document.write(str.toLowerCase()+"<br/>");
+            document.write(str.toUpperCase()+"<br/>");
+
+            /*
+                concat  字符串拼接
+            */
+
+            var concatStr=str.concat("!",100);
+            document.write(concatStr+"<br/>");
         </script>
     </head>
     <body>

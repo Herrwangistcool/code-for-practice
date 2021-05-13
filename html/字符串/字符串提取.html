@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                substring
+                    格式：字符串.substring(start, end);
+                    功能：将字符串中[start, end)这部分字符提取，生成一个新字符串
+                    返回值：新生成的字符串
+            */
+
+            var str="hello";
+            var newStr=str.substring(1,4);
+            document.write(newStr+"<br/>");
+
+            /*
+                substr
+                    格式：字符串.substr(start, length);
+                    返回值：新生成的字符串
+            */
+
+            var lnStr=str.substr(1,3);
+            document.write(lnStr+"<br/>");
+
+            /*
+                slice()
+                    格式：字符串.slice(start, end);
+                    数组的方法，也可用于字符串
+            */
+
+            var sliceStr=str.slice(1,4);
+            document.write(sliceStr+"<br/>");
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
