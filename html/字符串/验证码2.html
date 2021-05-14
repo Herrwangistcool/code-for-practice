@@ -5,19 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Document</title>
+        <script src="charfunctions.js"></script>
         <script>
             /*
                 事件驱动函数
+                document.getElementById(id);
+                通过id获取页面上对应的标签
+                node.innerHTML  标签间的内容
             */
-
-            function btcClick(){
-                
+            function btnClick(){
+                //拿到div这个标签
+                var oDiv=document.getElementById("div1");
+                /* alert(oDiv.innerHTML);  //取值 */
+                /* oDiv.innerHTML='赋值'; */
+                oDiv.innerHTML=testCode(6);
             }
         </script>
     </head>
     <body>
         <div id="div1">00000</div>
-        //点击按钮，就会执行后面字符串中的代码
+        <!-- 点击按钮，就会执行后面字符串中的代码 -->
         <button onclick='btnClick();'>获取验证码</button>
     </body>
 </html>

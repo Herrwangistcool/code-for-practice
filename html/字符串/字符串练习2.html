@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+           /*
+                3.将字符串按照单词逆序，空格作为划分单词的唯一条件
+                传入："Welcome to Beijing"改为"Beijing to welcome"
+           */
+
+           function reverseStr(str){
+               //用split方法根据空格分隔，生成数组
+               var arr=str.split(" ");
+               //用reverse逆序排序
+               arr.reverse();
+               //用空格作为拼接符拼接该数组
+               return arr.join(" ");
+           }
+
+           document.write(reverseStr("welcome to Beijing"));
+
+           /*
+                4.对称数组
+                传入一个数组, 起元素类型与个数皆未知，返回新数组, 由原数组的元素正序反序拼接而成。
+                传入
+                    ["one", "two", "three"]
+                返回
+                    ["one", "two", "three", "three", "two", "one"];
+           */
+
+           function symmetryArr(arr){
+               //生成新数组
+               var newArr=arr.concat();
+               //逆序将元素插入新数组
+               for(var i=arr.length-1; i>=0; i--){
+                   newArr.push(arr[i]);
+               }
+               return newArr;
+           }
+
+           /*
+                5.已知一个字符串对象中，英语单词用各种非字母字符串分割，统计单词个数
+                传入："Yes, she*is%my@love.";
+                返回 5
+
+                【规律】当前面一个字符是字母，后面一个字符是非字母的时候，这就是一个单词
+           */
+
+           function countOfWord(str){
+               var count=0;
+               for(var i=0; i<str.length-1; i++){
+                    if(isABC(str[i]) && !isABC(str[i+1])){
+                        count++;
+                    }
+               }
+               return count;
+           }
+
+           //判断单个字符是否是字母
+           function isABC(charStr){
+               if(charStr>="a" && charStr<="z" || charStr>="A" && charStr<="Z"){
+                   return true;
+               }else{
+                   return false;
+               }
+           }
+
+           /*
+                6.实现函数，查找子串出现的次数，返回字符串str中出现substring的次数
+                传入："abdabcabc", "abc"
+                返回：3
+           */
+
+           function countOfStr(supStr, subStr){
+               //用subStr分割字符串
+               var arr=supStr.split(subStr);
+               //分割出来的元素个数-1就是subStr的个数
+               return arr.length-1;
+           }
+
+           /*
+                7.已知千峰邮箱的用户名只能由数字字母下划线组成，域名为@1000phone.com,
+                判断一个字符串是否是千峰邮箱，是返回true，不是返回false。
+           */
+
+           function isEmail(email){
+               //查找@符合位置
+               var index=email.indexOf("@");
+               if(index==-1){
+                   return false;
+               }else{
+                   var endStr=email.substring(index);
+                   if(endStr=="@1000phone.com"){
+                       return false;
+                   }else{
+                       //判断用户名是否符合数字字母下划线
+                       var username=email.substring(0,index); //从下标0取到index位置的字符串
+                       var isYes=true;  //假设都符合
+                       for(var i=0; i<username.length;i++){
+                           if(!isDEF(username[i])){
+                               isYes=false;
+                               break;
+                           }
+                       }
+                       return isYes;
+                   }
+               }
+           }
+
+           //判断单个字符是否符合数字字母下划线
+           function isDEF(charStr){
+               if(charStr>="a" && charStr<="z" || charStr>="A" && charStr<="Z" || charStr>="0" && charStr<="9" || charStr=="_"){
+                   return true;
+               }else{
+                   return false;
+               }
+           }
+           
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
