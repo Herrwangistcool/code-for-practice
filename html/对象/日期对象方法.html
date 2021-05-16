@@ -7,9 +7,69 @@
         <title>Document</title>
         <script>
             /*
-                
+                日期对象格式化
+                .toDateString() 以特定的格式显示星期几、月、日和年
+                .toTimeString() 以特定的格式显示时、分、秒和时区
+                .toLocaleTimeString()   以特定地区格式显示时、分、秒和时区
+                .toUTCString()  以特定的格式显示完整的UTC日期
             */
 
+            var d=new Date();
+            document.write(d.toDateString());
+            document.write("<br/>");
+            document.write(d.toTimeString());
+            document.write("<br/>");
+            document.write(d.toLocaleTimeString());
+            document.write("<br/>"+d.toUTCString());
+            document.write("<br/>"+d.toLocaleDateString());
+            document.write("<br/>"+d.toLocaleDateString()+" "+d.toLocaleTimeString());
+
+            /*
+                日期对象方法
+                set/get即能获取又能赋值，get只能获取
+                    set/getDate()   从Date对象中返回一个月中的某一天(1~31)
+                    getDay()    从Date对象返回一周中的某一天(0~6)
+                    set/getMonth()  从Date对象中返回月份(0~11)
+                    set/getFullYear()   从Date对象以四位数返回年份
+                    set/getHours()  返回Date对象的小时(0~23)
+                    set/getMinutes()    返回Date对象的分钟(0~59)
+                    set/getSeconds()    返回Date对象的秒数(0~59)
+                    set/getMillisecondes()  返回Date对象的毫秒
+                    set/getTime()   返回1970年1月1日至今的毫秒数
+                    getTimeZoneOfset()  返回本地时间与格林威治标准时间(GMT)的分钟差
+            */
+
+            function showTime(){
+                var d=new Date();
+                var year=d.getFullYear();
+                var month=d.getMonth()+1;   //0~11
+                var date=d.getDate();
+                var week=d.getDay();    //0~6 0是周日
+                week=numOfChinese(week);
+                var hour=doubleNum(d.getHours());
+                var min=doubleNum(d.getMinutes());
+                var sec=doubleNum(d.getSeconds());
+
+                var str=year+"年"+month+"月"+date+"日 星期"+week+" "+hour+":"+min+":"+sec;
+                return str;
+            }
+
+            document.write("<br/>"+showTime());
+
+            //数字转成中文
+            function numOfChinese(num){
+                var arr=["日", "一", "二", "三", "四", "五", "六"];
+                return arr[num];
+            }
+
+            //时分秒两位显示
+            function doubleNum(n){
+                if(n<10){
+                    return "0"+n;
+                }else{
+                    return n;
+                }
+            }
         </script>
     </head>
     <body>

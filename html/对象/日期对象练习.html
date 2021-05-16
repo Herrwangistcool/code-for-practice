@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                【注】 所有的参照时间点是1970年
+                Date.parse()
+                    格式：Date.parse(日期对象)
+                    功能：可以将日期对象转成毫秒数
+
+                d.getTime()/d.setTime();
+                    格式：日期对象.getTime/setTime
+                    功能：将当前日期对象转成毫秒数
+            */
+
+            var d=new Date();
+            document.write(Date.parse(d)+"<br/>");  //1621178872000
+            document.write(d.getTime()+"<br/>");    //1621178872690
+            d.setTime(1000);    //重设日期
+            document.write(d+"<br/>");
+
+            /*
+                获取两个日期之间相差的天数
+                    规定传入日期格式
+                    "2000-01-01"
+                    "2000/01/01"
+            */
+
+            function countOfDate(d1, d2){
+                var dd1=new Date(d1);
+                var dd2=new Date(d2);
+
+                var time1=dd1.getTime();
+                var time2=dd2.getTime();
+                var time=Math.abs(time1-time2);
+                return parseInt(time/1000/3600/24);
+            }
+
+            document.write(countOfDate("2006/08/09","2007/05/06")+"<br/>");
+
+            /*
+                输入n，输出n天后的时间
+            */
+
+            function afterOfDate(n){
+                var d=new Date();
+                var day=d.getDate();
+                d.setDate(day+n);
+
+                return d;
+            }
+
+            document.write(afterOfDate(30)+"<br/>");
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
