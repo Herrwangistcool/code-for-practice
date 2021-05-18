@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <style>
+            #div1{
+                width: 600px;
+                height: 100px;
+                text-align: center;
+                line-height: 100px;
+                margin: 100px auto;
+                border: 1px solid black;
+                font-size: 30px;
+            }
+        </style>
+        <script>
+            function showTime(){
+                var d=new Date();
+                var year=d.getFullYear();
+                var month=d.getMonth()+1;   //0~11
+                var date=d.getDate();
+                var week=d.getDay();    //0~6 0是周日
+                week=numOfChinese(week);
+                var hour=doubleNum(d.getHours());
+                var min=doubleNum(d.getMinutes());
+                var sec=doubleNum(d.getSeconds());
+
+                var str=year+"年"+month+"月"+date+"日 星期"+week+" "+hour+":"+min+":"+sec;
+                return str;
+            }
+            //数字转成中文
+            function numOfChinese(num){
+                var arr=["日", "一", "二", "三", "四", "五", "六"];
+                return arr[num];
+            }
+
+            //时分秒两位显示
+            function doubleNum(n){
+                if(n<10){
+                    return "0"+n;
+                }else{
+                    return n;
+                }
+            }
+            setInterval(function(){
+                var oDiv=document.getElementById("div1");
+                oDiv.innerHTML=showTime();
+            },1000);
+        </script>
+    </head>
+    <body>
+        <div id="div1">显示当前时间</div>
+    </body>
+</html>
