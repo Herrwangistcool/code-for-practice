@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                BOM browser object model
+            */
+
+            /*
+                系统对话框
+                    window 方法(一般情况下window可以省略)
+                    alert 弹出警告框
+                    confirm()  弹出一个待确定和取消的提示框
+                        返回值：如果点击确定 返回true 如果点击取消 返回false
+                    prompt() 弹出一个带输入框的提示框
+                        参数：
+                            第一个参数：面板上显示的内容
+                            第二个参数：输入框里面的默认值（可以不传入）
+                        返回值：
+                            点击确定，返回输入框中的内容
+                            点击取消，返回null
+
+                所有的属性方法和变量前面都可以跟一个window
+            */
+
+            /* var res=confirm("你确定要离开嘛？");
+            document.write(res);
+ */
+            /* var res=prompt("请输入内容",100);
+            document.write(res);
+ */
+            /* alert("hello");
+            window.alert("world");
+
+            function show(){
+                alert("hello world");
+            }
+            window.show(); */
+
+            /*
+                open()
+                    第一个参数：跳转的url 打开一个新窗口，加载url
+                    第二个参数：字符串，给打开的窗口起一个名字 找到一个叫xxx的窗口加载url
+                    第三个参数：一串特殊含义的字符串，可以控制打开窗口的属性
+            */
+
+            function btnClick(){
+                //window.open()
+                open("https://www.baidu.com","xxx","width=400, height=400,top=200,left=200");
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="btnClick();">打开窗口</button>
+    </body>
+</html>
