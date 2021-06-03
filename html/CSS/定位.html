@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <style>
+            html, body{
+                margin: 0;
+                padding: 0;
+            }
+
+            .box{
+                width: 1200px;
+                height: 541px;
+                background: url(http://img.1ppt.com/uploads/allimg/1707/1_170715173201_1.jpg);
+                margin: 10px auto;
+                position: relative;
+            }
+
+            .p1{
+                left: 149px;
+                top: 144px;
+                position: absolute;
+            }
+
+            .p1 .point{
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background-color: blue;
+                float: left;
+            }
+            .p1 .info{
+                float: left;
+                line-height: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="p1">
+                <!-- span标签默认情况下是行内元素 -->
+                <span class="point"></span>
+                <span class="info">梅西</span>
+            </div>
+        </div>
+    </body>
+</html>
