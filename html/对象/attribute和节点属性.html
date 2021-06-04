@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script>
+            /*
+                setAttribute
+                getAttribute
+                removeAttribute()
+            */
+
+            /*
+                attribute方法与.方法的区别
+                1.对于class的访问
+                2.支持自定义属性
+            */
+
+            window.onload=function(){
+                var oDiv=document.getElementById('div1');
+
+                console.log(oDiv.className);
+                console.log(oDiv.getAttribute("class"));
+
+                console.log(oDiv.xxx);
+                console.log(oDiv.getAttribute("xxx"));
+
+                //设置自定义属性
+                oDiv.setAttribute("class", "box5");
+                oDiv.setAttribute("zzz", "000");
+
+                oDiv.className='';
+                oDiv.removeAttribute('title');
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1" title="hello" class="box" xxx="yyy">wenben</div>
+    </body>
+</html>
