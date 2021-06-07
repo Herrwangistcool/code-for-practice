@@ -22,6 +22,7 @@
                 var oDiv=document.getElementById('div1');
 
                 console.log(oDiv.className);
+                // 只需要写class
                 console.log(oDiv.getAttribute("class"));
 
                 console.log(oDiv.xxx);
@@ -31,6 +32,7 @@
                 oDiv.setAttribute("class", "box5");
                 oDiv.setAttribute("zzz", "000");
 
+                //.方法没办法直接删除属性
                 oDiv.className='';
                 oDiv.removeAttribute('title');
             }

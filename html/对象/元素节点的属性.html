@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            innerHTML   获取标签间的内容    会解析标签
+            innerText   获取标签间的纯文本
+        */
+
+        window.onload=function(){
+            var oDiv=document.getElementById("div1");
+            /*将div标签间的全部内容输出*/
+            console.log(oDiv.innerHTML);
+            /*给innerHTML赋值会解析其中的标签*/
+            oDiv.innerHTML="<h1>Hello</h1>";
+
+            console.log(oDiv.innerText);
+            //不会解析标签
+            oDiv.innerText="<h1>World</h1>";
+
+            
+            console.log(oDiv.outerHTML);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        div文本
+        <em>em文本</em>
+        <strong>strong文本</strong>
+    </div>
+</body>
+</html>
