@@ -31,16 +31,25 @@
             */
 
             var oDiv=document.getElementById("div1");
-            console.log(oDiv.childNodes);   //节点列表对象
+            /* console.log(oDiv.childNodes);   //节点列表对象
             console.log(oDiv.childNodes[0].nodeName);
-            console.log(oDiv.childNodes[1].nodeType);
-            console.log(oDiv.childNodes[2].nodeValue);
+            console.log(oDiv.childNodes[1].nodeType);   //文本节点  文本节点通过元素节点的子节点获取
+            console.log(oDiv.childNodes[2].nodeValue); */
+
+            for(var i=0; i<oDiv.childNodes.length; i++){
+                console.log(oDiv.childNodes[i].nodeType);
+            }
             
             /*
                 将纯空白的文本节点删除
             */
 
-            alert(oDiv.children.length);
+            /* alert(oDiv.children.length);
+            console.log(oDiv.firstElementChild);
+            console.log(oDiv.lastElementChild); */
+
+            console.log(oDiv.firstElementChild.nextSibling.nodeValue);
+            console.log(oDiv.firstElementChild.nextElementSibling.nodeName);
         }
     </script>
 </head>
