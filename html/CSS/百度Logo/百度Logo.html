@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: #eb0005;
+            text-align: center;
+        }
+
+        @font-face{
+            /* 设置文本的字体名称 */
+            font-family:"bai";
+            /* IE只支持微软自有的.eot字体格式 */
+            src:url(fonts/Handel.eot);
+            /* 其它浏览器仅支持.ttf */
+            src:local("bai"), url(fonts/Handel.ttf) format("truetype");
+        }
+
+        @font-face{
+            font-family:"du";
+            src:url(fonts/方正新综艺简体.eot);
+            src:local("du") url(fonts/方正新综艺简体.ttf) format("truetype");
+        }
+
+        .g1{
+            /* 字体大小 */
+            font-size: 60px;
+            /* 字体类型 */
+            font-family: MS Ui Gothic, Arial, sans-serif;
+            /* 字间距 */
+            letter-spacing: 1px;
+            /* 字体粗细 */
+            font-weight: bold;
+        }
+
+        .g2{
+            font-size:50px; 
+            font-family:MS Ui Gothic, Arial, sans-serif;
+            letter-spacing: 1px;
+            font-weight: 900;
+        }
+
+        p img{
+            position:relative;
+            top:8px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <span class="g1">Bai</span>
+        <img src="images/baidu.jpg" alt="">
+        <span class="g2">百度</span>
+    </p>
+</body>
+</html>
