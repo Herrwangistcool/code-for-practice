@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <style>
+            #div1{
+                width: 120px;
+                height: 150px;
+                padding: 50px;
+                background-color: orange;
+                border: 1px solid black;
+                margin: auto;
+                margin-top: 100px;
+                margin-bottom: 0px;
+            }
+            #div1 span{
+                font-size: 22px;
+            }
+            #div1 button{
+                width: 100px;
+                height: 30px;
+                font-size: 16px;
+                margin-top: 20px;
+                background-color: black;
+                color: white;
+                margin-left: 10px;
+            }
+            #div2{
+                width: 220px;
+                height: 200px;
+                background-color: peachpuff;
+                margin: auto;
+            }
+            
+            #div2 div{
+                border-bottom: 1px dashed gray;
+                padding: 2px;
+                position: relative;
+            }
+
+            #div2 div button{
+                position:absolute;
+                right: 0px;
+            }
+            #time{
+                margin:auto;
+                padding-left: 8px;
+            }
+        </style>
+        <script>
+            //通过id获取标签的方法简化
+            function $(id){
+                return document.getElementById(id);
+            }
+
+            var i=0; //规定初始秒数
+            var timer; //记录定时器返回值
+            var isRunning=false; //代表当前定时器是否运行
+            var currentTime=$("time");
+
+            function startFunc(){
+                timer=setInterval(function(){
+                    i++;
+                    $("sec").innerHTML=doubleNum(i%60);    //总秒数除以60，取余得秒数
+                    $("min").innerHTML=doubleNum(parseInt(i/60)%60);
+                    $("hour").innerHTML=doubleNum(parseInt(i/3600));
+                    },1000)
+            }
+
+            //暂停
+            function pauseFunc(){
+                clearInterval(timer);
+            }
+            //给按钮添加点击事件
+            window.onload=function(){
+                $("SandP").onclick=function(){
+                    if(!isRunning){
+                        $("SandP").innerHTML="暂停";
+                        isRunning=true;
+                        startFunc();
+                    }else{
+                        $("SandP").innerHTML="开始";
+                        isRunning=false;
+                        var newDiv=document.createElement("div");
+                        var oTxt=document.createTextNode(currentTime.childNodes[1].nodeValue);
+                        newDiv.appendChild(oTxt);
+                        pauseFunc();
+                    }
+                }
+
+                //重置
+                $("reset").onclick=function(){
+                    clearInterval(timer);
+                    i=0;
+                    isRunning=false;
+                    $("SandP").innerHTML="开始";
+                    $("sec").innerHTML="00";   
+                    $("min").innerHTML="00";
+                    $("hour").innerHTML="00";
+                }
+            }
+            
+            function doubleNum(n){
+                if(n<10){
+                    return "0"+n;
+                }else{
+                    return n;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            <div id="time">
+                <span id="hour">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+            </div>
+            <button id="SandP">开始</button>
+            
+            <button id="reset">复位</button>
+        </div>
+        <div id="div2">
+            <div>xxx <button>x</button></div>
+            <div>xxx <button>x</button></div>
+            <div>xxx <button>x</button></div>
+        </div>
+    </body>
+</html>
