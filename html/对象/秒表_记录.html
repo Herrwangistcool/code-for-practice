@@ -59,7 +59,7 @@
             var i=0; //规定初始秒数
             var timer; //记录定时器返回值
             var isRunning=false; //代表当前定时器是否运行
-            var currentTime=$("time");
+            
 
             function startFunc(){
                 timer=setInterval(function(){
@@ -76,6 +76,7 @@
             }
             //给按钮添加点击事件
             window.onload=function(){
+                var oDiv2=$("div2");
                 $("SandP").onclick=function(){
                     if(!isRunning){
                         $("SandP").innerHTML="暂停";
@@ -85,8 +86,11 @@
                         $("SandP").innerHTML="开始";
                         isRunning=false;
                         var newDiv=document.createElement("div");
-                        var oTxt=document.createTextNode(currentTime.childNodes[1].nodeValue);
+                        var oTxt=document.createTextNode("123");
                         newDiv.appendChild(oTxt);
+                        //newDiv.style.backgroundColor=randomColor();
+
+                        oDiv2.appendChild(newDiv);
                         pauseFunc();
                     }
                 }
