@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 button{
+            width: 100px;
+            height:30px;
+            background-color:gray;
+            color:white;
+            font-size: 18px;
+        }
+        #div1 .active{
+            background-color:orange;
+            color:blue;
+        }
+        #div1 div{
+            width: 340px;
+            height:300px;
+            border:1px solid black;
+            display:none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv1=document.getElementById('div1');
+            var oBtns=oDiv1.getElementsByTagName('button');
+            var oDivs=oDiv1.getElementsByTagName('div');
+            // 给每一个按钮添加点击
+            for(var i=0; i<oBtns.length; i++){
+                // 给每一个按钮添加一个index属性
+                oBtns[i].index=i;
+                oBtns[i].onclick=function(){
+                    // 取消所有按钮样式
+                    for(var j=0; j<oBtns.length; j++){
+                        oBtns[j].className='';
+                        // 把所有div的display设置为none
+                        oDivs[j].style.display='none';
+                    }
+
+                    // 用this.index取出当前按钮的下标
+                    oDivs[this.index].style.display='block';
+                    this.className='active';
+                    
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <!-- 默认第一个按钮为激活状态 -->
+        <button class="active">按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <!-- 默认第一个div的display为block -->
+        <div style='display:block'>内容1</div>
+        <div>内容2</div>
+        <div>内容3</div>
+    </div>
+</body>
+</html>
