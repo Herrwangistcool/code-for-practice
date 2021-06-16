@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* border:1px solid black;
+            padding: 8px;
+            margin: 20px; */
+        }
+
+        #div2{
+            margin: 30px;
+            width:200px;
+            height: 200px;
+            background-color:orange;
+            position:relative;
+        }
+        #div3{
+            margin:20px;
+            width: 100px;
+            height: 100px;
+            background-color:antiquewhite;
+        }
+    </style>
+    <script src="./tools.js"></script>
+    <script>
+        /*
+            offsetWidth
+            offsetHeight
+
+            offsetLeft  眼睛能看到的距离第一个有定位的父节点的距离
+            offsetTop
+        */
+
+        window.onload=function(){
+            var oDiv=document.getElementById('div1');
+            // alert(getStyle(oDiv,"width"));
+
+            //offset获取的宽度是数值，可用于计算
+            // offsetWidth获取的宽度包括width+border+padding 眼睛能看到的宽都算
+            // alert(oDiv.offsetWidth);
+
+            var oDiv3=document.getElementById('div3');
+            // alert(getStyle(oDiv3, "left")); // auto 没有设置left值
+
+            // 眼睛能看到的距离第一个有定位的父节点的距离
+            alert(oDiv3.offsetLeft);    
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2">
+        <div id="div3"></div>
+    </div>
+</body>
+</html>
