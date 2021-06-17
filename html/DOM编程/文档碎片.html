@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            创建10万个节点，添加到页面上
+        */
+
+        window.onload=function(){
+
+            console.time("test1");
+
+            for(var i=0; i<100000; i++){
+                // 每创一个节点，就插一个节点到页面中去
+                var newDiv=document.createElement("div");
+                document.body.append(newDiv);
+            }
+            /* 测试代码运行时间 */
+            console.timeEnd("test1");   
+
+            /*
+                先创建10万个节点，将10万个节点插入到一个节点上，最后将这1个节点插入到页面上
+            */
+
+            console.time("test2");
+
+            // 文档碎片操作
+            var node=document.createElement("div");
+            for(var i=0; i<100000; i++){
+                var newDiv=document.createElement("div");
+                // 给节点添加插入新的节点，此过程发生在内存中
+                node.appendChild(newDiv);
+            }
+            document.body.appendChild(node);
+
+            console.timeEnd("test2");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
