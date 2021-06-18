@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            line-height:100px;
+            text-align: center;
+            margin: 20px;
+            background-color: gray;
+        }
+
+        div span{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: white;
+            display:inline-block;
+        }
+    </style>
+    <script>
+
+        /*
+            【注】经过子节点会重复触发
+                mouseover
+                mouseout
+                
+            【注】经过子节点不会重复触发    IE8以后才有
+                mouseenter
+                mouseleave
+        */
+
+        window.onload=function(){
+            var oDivs=document.getElementsByTagName('div');
+
+            /*
+                事件添加到div上，在经过div子节点的时候会重复触发mouseover
+            */
+            // var i=0;
+            // oDivs[0].onmouseover=function(){
+            //     let oSpan=this.getElementsByTagName("span")[0];
+            //     oSpan.innerHTML=i++;
+            // }
+
+            /*
+                事件添加到div上，在经过div子节点的时候不会重复mouseenter
+            */
+            // var j=0;
+            // oDivs[1].onmouseenter=function(){
+            //     let oSpan=this.getElementsByTagName("span")[0];
+            //     oSpan.innerHTML=j++;
+            // }
+
+            // 鼠标离开div的子节点时也会触发mouseout
+            var i=0;
+            oDivs[0].onmouseout=function(){
+                let oSpan=this.getElementsByTagName("span")[0];
+                oSpan.innerHTML=i++;
+            }
+            // 鼠标只有离开div的时候才会触发mouseleave
+            var j=0;
+            oDivs[1].onmouseleave=function(){
+                let oSpan=this.getElementsByTagName("span")[0];
+                oSpan.innerHTML=j++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <span>mouseover</span>
+    </div>
+    <div>
+        <span>mouseover</span>
+    </div>
+</body>
+</html>

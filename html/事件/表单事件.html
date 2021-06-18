@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            表单事件
+                blur    失去焦点
+                focus   获取焦点
+                select  当我们在输入框中选中文本的时候触发
+                change  当我们对输入框的文本进行修改并且失去焦点的时候触发
+
+                【注】必须添加在form元素上 
+                submit  当我们点击submit按钮时才会触发
+                reset   当我们点击reset上按钮才会触发
+        */
+
+        window.onload=function(){
+            var oInput1=document.getElementById('input1');
+            // oInput1.onblur=function(){
+            //     this.value='失去焦点';
+            // }
+            // oInput1.onfocus=function(){
+            //     this.value='获取焦点';
+            // }
+
+            // oInput1.onselect=function(){
+            //     alert("被选中了");
+            // }
+
+            oInput1.onchange=function(){
+                alert("被修改了");
+            }
+
+            var oF1=document.getElementById("f1");
+            oF1.onsubmit=function(){
+                alert("提交");
+            }
+            oF1.onreset=function(){
+                alert("重置");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" id='f1'>
+        <input type="text" value='默认文本' id="input1" />
+        <input type="submit" />
+        <input type="reset" />
+    </form>
+</body>
+</html>
