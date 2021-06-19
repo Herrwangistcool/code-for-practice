@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* 页面基本属性 */
+            background-color:#fff;  /*背景色*/
+            color:#000;             /*前景色*/
+            font-size:0.875em;        /*网页字体大小*/
+            /* 网页默认字体 */
+            font-family: "新宋体", Arial, Arial, Helvetica, sans-serif; 
+        }
+        #intro{
+            margin:0 auto;
+            padding:0;
+            width: 800px;
+        }
+        h1, h2, h3{
+            /* 标题样式 */
+            text-align:center;      /*居中对齐*/
+            margin-bottom: 1em;     /*定义底边界*/
+        }
+
+        h2{
+            /* 个性化二级标题 */
+            color:#999;         /*字体颜色*/
+            text-decoration: underline;     /*下划线*/
+        }
+        h3{
+            /* 个性化三级标题 */
+            letter-spacing:0.4em;   /*字距*/
+            font-size: 1.4em;       /*字体大小*/
+        }
+
+        p{
+            margin:0;
+            line-height:1.8em;
+        }
+        #quickSummary .p1{
+            /* 第一文本块的第一段样式 */
+            color:#444;
+        }
+        #quickSummary .p2{
+            /* 第一块文本的第二段样式 */
+            text-align:right;
+        }
+        #quickSummary .p1, .p2, .p3{
+            /* 除了首字下沉段以外的段样式 */
+            text-indent: 2em;
+        }
+
+        /* 为第一个文本块定义左右缩进样式 */
+        #quickSummary{
+            /* 第一个文本块样式 */
+            margin-left: 4em;   /*左缩进*/
+            margin-right: 4em;  /*右缩进*/
+        }
+
+        .first:first-letter{
+            /* 首字下沉样式类 */
+            font-size: 50px;        /*字体大小*/
+            float:left;             /*向左浮动显示*/
+            margin-right: 6px;      /*增加右侧边距*/
+            padding:2px;            /*增加首字四周的补白*/
+            font-weight: bold;      /*加粗字体*/
+            line-height:1em;        /*定义行距为一个字符大小，避免行高影响段落版式*/
+            background:#000;      /*背景色*/
+            color:#fff;           /*前景色*/
+        }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <div id="pageHeader">
+            <h1>CSS Zen Garden</h1>
+            <!-- HTML5 不支持 <acronym> 标签。请使用 <abbr> 标签代替它。
+            <acronym> 标签定义首字母缩略词。 -->
+            <h2><span><abbr title="cascading style sheets">CSS</abbr>设计之美</span></h2>
+        </div>
+        <div id="quickSummary">
+            <p class='p1'>
+                <span>
+                    展示以<abbr title="cascading style sheets">CSS</abbr>技术为基础，并提供超强的视觉冲击力。只要选择列表中任意一个样式表，
+                    就可以将它加载到本页面中，并呈现不同的设计效果。
+                </span>
+            </p>
+            <p class="p2">
+                <span>
+                    下载<a title="这个页面的HTML源代码不能够被改动" href="https://www.w3school.com.cn/i/w3school_logo_white.gif">HTML文档</a> 和 
+                    <a title="这个页面的CSS样式表文件，你可以更改它。" href="http://www.csszengarden.com/zengarden-sample.css">CSS文件</a>。
+                </span>
+            </p>
+        </div>
+        <div id="preamble">
+            <h3><span>启蒙之路</span></h3>
+            <p class="p1 first">
+                <span>
+                    不同浏览器随意定义标签，导致无法相互兼容的<abbr title="Document object model">DOM</abbr>结构，或者提供缺乏标准支持的
+                    <abbr title="cascading style sheets">CSS</abbr>等陋习随处可见，如今当使用这些不兼容的标签和样式时，设计之路会一路坎坷。
+                </span>
+            </p>
+            <p class="p2">
+                <span>
+                    <!-- IE 5.5 或更早版本的 IE 浏览器不支持 <acronym> 标签。 -->
+                    现在，我们必须清除以前为了兼容不同浏览器而使用的一些过时的小技巧。感谢<acronym title="world wide web consortium">W3C</acronym>、
+                    <!-- IE 6 或更早版本的 IE 浏览器不支持 <abbr> 标签。 -->
+                    <abbr title="web standards project">WASP</abbr>等标准组织，以及浏览器厂家和开发师们的不懈努力，我们终于能够进入Web设计的标准时代。
+                </span>
+            </p>
+            <p class="p3">
+                <span>
+                    CSS Zen Garden（样式表禅意花园）邀请您发挥自己的想象力，构思一个专业级的网页。让我们用慧眼来审视，充满理想和激情去学习CSS这个不朽的技术，
+                    最终使自己能够达到技术和艺术合而为一的最高境界。
+                </span>
+            </p>   
+        </div>
+    </div>
+</body>
+</html>
