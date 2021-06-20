@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            /*
+                事件对象：
+                    button的属性
+                    0   左键
+                    1   滚轮
+                    2   右键
+
+                获取当前鼠标位置：(原点位置不一样)
+                    clientX     clientY     可视窗口的左上角为原点
+                    pageX       pageY       整个页面的左上角为原点，包含滚出去的滚动距离
+                    screenX     screenY     电脑屏幕的左上角为原点
+            */
+
+            // 获取事件对象
+            document.onmousedown=function(ev){
+                var e=ev || window.event;
+                // alert(e.button);    //按下鼠标左键返回0，右键返回2，滚轮返回1
+
+                // 比较clientX与pageX
+                var oBtn=document.getElementById("container");
+                var text=oBtn.getElementsByTagName("p");
+                text[0].innerHTML="clientX:"+e.clientX+","+"clientY:"+e.clientY;
+                text[1].innerHTML="pageX:"+e.pageX+","+"pageY:"+e.pageY;
+                text[2].innerHTML="screenX"+e.screenX+","+"screenY"+e.screenY;
+            }
+        }
+    </script>
+</head>
+<body style="height: 3000px;">
+    <div id="container">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</body>
+</html>
