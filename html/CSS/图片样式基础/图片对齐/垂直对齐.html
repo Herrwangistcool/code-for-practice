@@ -1,0 +1,59 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>上机练习</title>
+<style type="text/css">
+body {font-size:48px;}
+p span {padding: 0 12px; }
+.baseline {vertical-align:baseline;}
+.sub {vertical-align:sub;}
+.super {vertical-align:super;}
+.top {vertical-align:top;}
+.text-top {vertical-align:text-top;}
+.middle {vertical-align:middle;}
+.bottom {vertical-align:bottom;}
+div{
+    position: absolute;
+    left: 135px;
+    top: 110px;
+}
+div span {
+    padding:0 12px;
+    font-size: 14px;
+}
+.span1 {
+     padding-left:2px;   
+}
+.span2 {
+     padding-left:0px;
+     margin-left:-6px;   
+}
+
+</style>
+</head>
+
+<body>
+<p>valign:
+<span class="baseline"><img src="images/box.gif" title="baseline" /></span>
+<span class="sub"><img src="images/box.gif" title="sub" /></span>
+<span class="super"><img src="images/box.gif" title="super" /></span>
+<span class="top"><img src="images/box.gif" title="top" /></span>
+<span class="text-top"><img src="images/box.gif" title="text-top" /></span>
+<span class="middle"><img src="images/box.gif" title="middle" /></span>
+<span class="bottom"><img src="images/box.gif" title="bottom" /></span>
+<span class="text-bottom"><img src="images/box.gif" title="text-bottom" /></span>
+</p>
+<div>
+    <span>baseline</span>
+    <span>sub</span>
+    <span>super</span>
+    <span>top</span>
+    <span class="span1">text-top</span>
+    <span class="span2">middle</span>
+    <span class="span2">bottom</span>
+    <span class="span2">text-bottom</span>
+</div>
+</body>
+</html>
