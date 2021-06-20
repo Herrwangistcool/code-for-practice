@@ -82,3 +82,10 @@ function afterOfDate(n){
 
     return d;
 }
+
+// 事件对象获取
+function showEvent(ev){
+    // 通过形参拿事件对象的方法在IE8以下不兼容，IE8以下通过window.event
+    var e=ev || window.event;
+    alert(e);   //如果第一个参数有值，说明参数不为空，最终就执行第一个
+}
