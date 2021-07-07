@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽签系统</title>
+    <style>
+        .company{
+            width: 400px;
+            height: 30px;
+            margin: 5px 0px;
+            line-height:30px;
+        }
+    </style>
+    <script>
+
+        window.onload=function(){
+            var arr=["恒力油化海南","恒力能源海南","江苏恒力化纤","恒力华东石化","恒力化工销售"];
+            
+            function randomCompany(arr){
+                    var res=[];
+                    for(var i=arr.length - 1; i>=0; i--){
+                    var index=parseInt(Math.random()*i);
+                    res.push(arr[index]);
+                    arr.splice(index, 1);
+                }
+                return res;
+            }
+            function randomColor(){
+                var str="rgba("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+"1)";
+                return str;
+            }
+            
+            var oBtn=document.getElementById("btn1");
+            var res=randomCompany(arr);
+            var count=0;
+            oBtn.onclick=function(){
+                var dom=document.createElement('div');
+                dom.style.background=randomColor();
+                dom.className='company';
+                dom.innerHTML=res[count%5];
+                document.body.appendChild(dom);
+                count++;
+                if(count%res.length == 0){
+                    res=randomCompany(res);
+                }
+            }           
+        }
+        // alert(arr[index]);
+    </script>
+</head>
+<body>
+    <div id="container">
+        <p>
+            <button id='btn1'>抽取</button>
+        </p>
+        <div id='div1'>
+            <p>抽签结果：</p>
+        </div>
+    </div> 
+</body>
+</html>
