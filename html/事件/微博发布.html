@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 100px;
+            background-color: orange;
+        }
+        #div2{
+            width: 400px;
+            height: 800px;
+            background-color: peachpuff;
+        }
+        #input1{
+            width: 380px;
+            height: 30px;
+            font-size: 18px;
+            display: block;
+            margin: auto;
+        }
+        #div1 button{
+            width: 100px;
+            height: 30px;
+            font-size: 18px;
+            background-color: black;
+            color: white;
+            margin-left: 20px;
+        }
+
+        #div2 div{
+            border-bottom: 1px dashed gray;
+            padding: 2px;
+            position: relative;
+        }
+
+        #div2 div button{
+            position:absolute;
+            right: 0px;
+        }
+    </style>
+    <script>
+        // 随机颜色
+        function randomColor(){
+                var str="rgba("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+"1)";
+                return str;
+            }
+
+        window.onload=function(){
+            var oDiv1=document.getElementById("div1");
+            var oDiv2=document.getElementById("div2");
+            var oInput=document.getElementById("input1");
+
+            // 获取div1下所有的button
+            var oBtns=oDiv1.getElementsByTagName("button");
+            // 获取div2下所有的button
+            var oBtns2=oDiv2.getElementsByTagName("button");
+            /*
+                待完善功能：给x按钮添加删除事件
+            */
+
+            //分别给三个按钮添加不同的点击函数
+            oBtns[0].onclick=function(){
+                //判断当前输入框是否为空
+                if(!oInput.value){
+                    alert("输入内容不能为空")
+                }else{
+                    //获取到输入的内容，创建节点添加到页面上
+                    var newDiv=document.createElement("div");
+                    var oTxt=document.createTextNode(oInput.value);
+                    newDiv.appendChild(oTxt);
+                    newDiv.style.backgroundColor=randomColor();
+
+                    oDiv2.appendChild(newDiv);
+                    // 清空输入框
+                    oInput.value='';
+                }
+            }
+
+            oBtns[1].onclick=function(){
+                // 删除最后一个节点
+                oDiv2.removeChild(oDiv2.lastChild);
+            }
+
+            oBtns[2].onclick=function(){
+                //拷贝最后一个节点，再添加到页面上
+                var newNode=oDiv2.lastChild.cloneNode(true);
+                oDiv2.appendChild(newNode);
+            }
+
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input type="text" id="input1" placeholder="输入内容"><br/>
+        <button>增加</button>
+        <button>删除</button>
+        <button>拷贝</button>
+    </div>
+    <div id="div2">
+        <div>xxx <button>x</button></div>
+        <div>xxx <button>x</button></div>
+        <div>xxx <button>x</button></div>
+    </div>
+</body>
+</html>
