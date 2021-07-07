@@ -1,3 +1,8 @@
+//通过id获取标签的方法简化
+function $(id){
+    return document.getElementById(id);
+}
+
 //浏览器兼容 获取样式
 function getStyle(node, cssStyle){
     return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
@@ -88,4 +93,14 @@ function showEvent(ev){
     // 通过形参拿事件对象的方法在IE8以下不兼容，IE8以下通过window.event
     var e=ev || window.event;
     alert(e);   //如果第一个参数有值，说明参数不为空，最终就执行第一个
+}
+
+// 给事件对象添加快捷键
+function ctrlEnter(){
+    var e=ev || window.event;       //获取事件对象
+    var which=e.keyCode || e.which; //获取键码
+    if(e.ctrlKey && which==13){
+        //enter的键码为13
+        $("submit").onclick();  //ctrl+enter组合键相当于点击submit
+    }
 }
